@@ -5,205 +5,584 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Concinnity Limited - Ecommerce SEO Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap"
-      rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+      /* ==== Global & Variables ==== */
+      :root {
+        --orange-primary: #ff7e00;
+        --orange-hover: #e66d00;
+        --text-gray: #595959;
+        --text-dark: #171717;
+        --border-light: #f0f2f1;
+
+        /* NEW: cap the site on very wide screens */
+        --page-max: 1444px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: white;
+        overflow-x: hidden;
+        color: var(--text-dark);
+      }
+
+      .font-manrope {
+        font-family: "Manrope", sans-serif;
+      }
+
+      .text-orange {
+        color: var(--orange-primary);
+      }
+
+      .bg-orange {
+        background-color: var(--orange-primary);
+      }
+
+      .text-gray {
+        color: var(--text-gray);
+      }
+
+      .text-dark {
+        color: var(--text-dark);
+      }
+
+      .border-light {
+        border-color: var(--border-light) !important;
+      }
+
+      /* Buttons */
+      .btn-orange {
+        background-color: var(--orange-primary);
+        border-color: var(--orange-primary);
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .btn-orange:hover {
+        background-color: var(--orange-hover);
+        border-color: var(--orange-hover);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Cards & Shadows */
+      .card-shadow {
+        box-shadow: 0px 4px 20px rgba(210, 210, 210, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 30px rgba(210, 210, 210, 0.25);
+      }
+
+      .card-shadow-light {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .bg-dark-custom {
+        background-color: #171717;
+      }
+
+      .line-height-22 {
+        line-height: 1.4;
+      }
+
+      /* ==== Hero ==== */
+      .hero-section {
+        background: linear-gradient(135deg, rgba(255, 126, 0, 0.05) 0%, rgba(255, 126, 0, 0.1) 100%);
+        min-height: 50vh;
+      }
+
+      /* was fixed width; use max-width so it shrinks on small screens */
+      .hero-text {
+        max-width: 690px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      /* Stats */
+      .stats-number {
+        font-size: 4rem;
+        line-height: 1;
+      }
+
+      /* ==== Section shells (were fixed 984px) ==== */
+      .section-spacing,
+      .benfit-section,
+      .stat-section,
+      .brand-visibility {
+        max-width: 984px;
+        width: 100%;
+        margin: 80px auto;
+      }
+
+      /* Benefit section specifics */
+      .benfit-section {
+        border-radius: 2px;
+      }
+
+      .benfit-section .col-lg-8 {
+        padding: 50px 80px 50px 81px;
+        border-radius: 2px;
+      }
+
+      /* Feature cards */
+      .feature-card {
+        height: 100%;
+        min-height: 350px;
+      }
+
+      /* ==== Second Statistics Block ==== */
+      .stat-section {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .stat-image img {
+        width: 400px;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .stat-content {
+        flex: 1;
+      }
+
+      .subheading {
+        color: #ff6600;
+        margin-bottom: 10px;
+      }
+
+      .highlight {
+        color: #ff6600;
+        font-size: 65px;
+        font-weight: bold;
+      }
+
+      .head-text {
+        display: flex;
+      }
+
+      .stat-text {
+        margin-left: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        width: 419px;
+      }
+
+      .description {
+        margin-top: 10px;
+        color: #595959;
+        font-size: 15px;
+      }
+
+      /* ==== Brand Visibility ==== */
+      .brand-visibility {
+        display: flex;
+        justify-content: space-between;
+        /* there were two conflicting rules; keep this */
+        gap: 24px;
+        margin-top: 150px;
+      }
+
+      .brand-visibility-title {
+        color: #FF7E00;
+      }
+
+      .brand-visibility-text {
+        max-width: 649px;
+        width: 100%;
+      }
+
+      .Concinnity-text {
+        max-width: 815px;
+        width: 100%;
+      }
+
+      /* ==== Concinnity Section ==== */
+      .concinnity {
+        padding: 72px 16px 96px;
+        background:
+          radial-gradient(1200px 400px at 50% 100%, rgba(255, 126, 0, 0.08), transparent 60%),
+          linear-gradient(to bottom, #fff 0%, #fff 55%, #fff7f0 85%, #fff 100%);
+      }
+
+      .concinnity__inner {
+        max-width: 820px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .concinnity__title {
+        color: var(--orange-primary);
+        font-weight: 800;
+        font-size: clamp(24px, 3.4vw, 32px);
+        margin: 0 0 16px;
+        letter-spacing: .2px;
+      }
+
+      .concinnity__lead {
+        color: var(--text-gray);
+        line-height: 1.75;
+        font-size: 16px;
+        margin: 0 auto 20px;
+      }
+
+      .concinnity__sub {
+        color: var(--text-dark);
+        font-weight: 600;
+        margin: 0 0 28px;
+        font-size: 18px;
+      }
+
+      .concinnity__cta {
+        display: inline-block;
+        background: var(--orange-primary);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 12px 26px;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(255, 126, 0, .25);
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+
+      .concinnity__cta:hover {
+        background: var(--orange-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(255, 126, 0, .28);
+      }
+
+      .concinnity__cta:active {
+        transform: translateY(0);
+        opacity: .95;
+      }
+
+      /* ==== Media containment (safety) ==== */
+      img,
+      video,
+      svg,
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* ==== CAP THE LAYOUT AT 1444px ==== */
+      /* Bootstrap containers (and friends) stop growing past 1444px */
+      @media (min-width: 1400px) {
+
+        .container,
+        .container-lg,
+        .container-xl,
+        .container-xxl {
+          max-width: var(--page-max);
+        }
+      }
+
+      /* Your hero uses .container-fluid — center & cap it too on ultrawide */
+      @media (min-width: 1444px) {
+        .hero-section .container-fluid {
+          max-width: var(--page-max);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      /* ==== Responsive Tweaks ==== */
+      @media (max-width: 991.98px) {
+        .brand-visibility {
+          flex-direction: column;
+          margin-top: 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .stats-number {
+          font-size: 3rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem !important;
+        }
+
+        /* add side padding so fixed-width sections breathe on mobile */
+        .section-spacing,
+        .benfit-section,
+        .stat-section,
+        .brand-visibility {
+          padding-left: 16px;
+          padding-right: 16px;
+          margin: 56px auto;
+        }
+
+        .benfit-section {
+          padding: 40px 16px;
+        }
+
+        .feature-card {
+          min-height: auto;
+          margin-bottom: 2rem;
+        }
+
+        .stat-section {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .stat-text {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .stats-number {
+          font-size: 2.5rem;
+        }
+
+        .hero-title {
+          font-size: 2rem !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
+
+
     <div id="header"></div>
+
+
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="hero d-flex justify-content-center align-items-center">
-        <div class="hero-info d-flex flex-column text-center gap-4">
-          <h1>
-            <span class="text-dark">Provider of Targeted </span>
-            <span class="text-orange">Ecommerce SEO</span>
-            <span class="text-dark"> Services</span>
-          </h1>
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xl-10">
+            <!-- Hero Content -->
+            <div class="hero-text text-center py-5">
+              <h1 class="font-manrope fw-bold hero-title mb-4" style="font-size: 3.5rem">
+                <span class="text-dark">Provider of Targeted </span>
+                <span class="text-orange">Ecommerce SEO</span>
+                <span class="text-dark"> Services</span>
+              </h1>
 
-          <p class="mx-auto" style="max-width: 500px">
-            Make your online store more visible on searches with Concinnity
-            Limited's eCommerce SEO
-          </p>
+              <p class="fs-5 text-dark mb-3 mx-auto" style="max-width: 500px">
+                Make your online store more visible on searches with Concinnity
+                Limited's eCommerce SEO
+              </p>
 
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center mb-0">
-              <li class="breadcrumb-item text-dark">Home</li>
-              <li class="breadcrumb-item text-dark">Solutions</li>
-              <li class="breadcrumb-item text-dark">Marketing</li>
-              <li class="breadcrumb-item text-dark">SEO</li>
-              <li class="breadcrumb-item active text-orange fw-medium" aria-current="page">
-                Ecommerce SEO
-              </li>
-            </ol>
-          </nav>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                  <li class="breadcrumb-item">
+                    <span class="text-dark">Home</span>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <span class="text-dark">Solutions</span>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <span class="text-dark">Marketing</span>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <span class="text-dark">SEO</span>
+                  </li>
+                  <li class="breadcrumb-item active text-orange fw-semibold" aria-current="page">
+                    Ecommerce SEO
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Statistics Section -->
-    <section class="statistics-section mt-6">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <button class="btn btn-tertiary mb-3">From invisible to invincible</button>
+    <section class="section-spacing">
+      <div class="">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <p class="text-orange fs-5 mb-3">From invisible to invincible</p>
 
             <div class="d-flex align-items-start mb-4">
-              <span class="fw-bold text-orange me-4" style="font-size: 4rem;">70%</span>
-              <h3 class="fw-medium text-dark mb-0">
-                of online shoppers hunt for reviews<br />before making a
-                purchase
-              </h3>
+              <span class="font-manrope fw-bold text-orange stats-number me-4">70%</span>
+              <div>
+                <h3 class="font-manrope fw-bold text-dark h4 mb-0">
+                  of online shoppers hunt for reviews<br />
+                  before making a purchase
+                </h3>
+              </div>
             </div>
 
-            <p class="hard-gray">
-              Improve your online store's visibility with Concinnity's eCommerce
-              SEO services. We have witnessed how small brands climb to the top
-              with SEO. Wherever you are, we want you to succeed. <br /><br />
-              eCommerce is growing fast. Online stores face tough competition.
-              Stay competitive by improving your online visibility.
-            </p>
+            <div class="text-gray fs-6 line-height-22">
+              Improve your online store's online visibility with Concinnity's
+              eCommerce SEO services. As a topnotch brand of eCommerce SEO in
+              Hong Kong, we have witnessed how the smallest of brands have
+              climbed to the top with the help of search engine optimization.
+              And wherever you are on your journey as a business, we would like
+              to see you do the same.
+              <br /><br />
+              eCommerce is a fast growing industry in Hong Kong. Online stores
+              and merchants are facing tough competition. So how do you stay
+              competitive and relevant in such an aggressive environment? You
+              need to start with your online visibility.
+            </div>
 
-            <button class="btn-large fw-medium mt-4">
+            <button class="btn btn-orange rounded-3 px-5 py-3 fw-medium fs-5 mt-4">
               Let's Talk
             </button>
           </div>
 
-          <div class="col-lg-6">
-            <img src="images/e-commerce_seo/laptop.png" class="img-fluid" alt="Ecommerce SEO Laptop" />
+          <div class="col-lg-6 text-lg-end">
+            <img src="/images/e-commerce_seo/laptop.png" />
           </div>
         </div>
       </div>
     </section>
-    </div>
-    </section>
 
     <!-- Benefits Section -->
-    <section class="benefits-section mt-6 bg-orange text-white">
-      <div class="container">
-        <div class="row align-items-center g-4">
+    <section class="benfit-section bg-dark-custom">
+      <div class="">
+        <div class="row align-items-center">
           <div class="col-lg-8">
-            <div class="py-5">
-              <h2 class="fw-medium mb-4">
-                <span class="text-white">How Can </span>
-                <span class="text-white">eCommerce SEO</span>
-                <span class="text-white"> Benefit </span>
-                <span class="text-white">Your</span>
-                <span class="text-white"> Online Shop?</span>
-              </h2>
+            <h2 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+              <span class="text-orange">How Can </span>
+              <span class="text-light">eCommerce SEO</span>
+              <span class="text-orange"> Benefit </span>
+              <span class="text-light">Your</span>
+              <span class="text-orange"> Online Shop?</span>
+            </h2>
 
-              <p class="mb-0">
-                SEO helps businesses improve SERP rankings. eCommerce SEO targets
-                buying/selling sites to increase sales and leads. This focused
-                approach ensures online store growth.
-              </p>
+            <p class="text-light fs-6 mb-0 line-height-22">
+              SEO is a practice which helps businesses to get better position on
+              search engine result pages (SERPs). The process itself can improve
+              the performance and visitors of your website. eCommerce SEO, on
+              the other hand, goes way beyond that. It has a more specified set
+              of goals which mainly targets sites that are buying or selling
+              items or products. This strategy is engineered to bring in more
+              sales and leads for your business. Since it is a focused approach,
+              this solution offers great advantages which ensures the growth
+              your online store.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="text-center">
+              <img src="/images/e-commerce_seo/orange.png" />
             </div>
           </div>
 
-          <div class="col-lg-4 text-center">
-            <img src="images/e-commerce_seo/orange.png" class="img-fluid" alt="Orange Illustration" />
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Second Statistics Section -->
-    <section class="mt-6">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <img src="images/e-commerce_seo/group.png" alt="E-commerce SEO" class="img-fluid rounded-4 shadow-sm" />
-          </div>
-
-          <div class="col-lg-6">
-            <button class="btn btn-tertiary mb-3">
-              Reduces the Amount of Ad Spend
-            </button>
-
-            <div class="d-flex align-items-start mb-4">
-              <span class="fw-bold text-orange me-3" style="font-size: 3rem;">55%</span>
-              <h3 class="fw-medium text-dark mb-0">
-                of shoppers say that online reviews<br />influence their buying
-                decision
-              </h3>
-            </div>
-
-            <p class="hard-gray mb-3">
-              eCommerce SEO requires time and effort to build reputation online,
-              but once your product page ranks, other pages follow easily.
-            </p>
-
-            <p class="hard-gray">
-              Concinnity Limited keeps your listings visible using organic
-              techniques, maximizing campaign savings while ensuring high
-              rankings.
-            </p>
-          </div>
-        </div>
+    <div class="stat-section">
+      <!-- Image Section -->
+      <div class="stat-image">
+        <img src="/images/e-commerce_seo/laptop2.svg" alt="People looking at laptop">
       </div>
-    </section>
+
+      <!-- Text Section -->
+      <div class="stat-content">
+        <p class="subheading">Reduces the Amount of Ad Spend</p>
+        <p class="head-text">
+          <span class="highlight">55%</span>
+          <span class="stat-text">of shoppers say that online reviews influence their buying decision</span>
+        </p>
+        <p class="description">
+          eCommerce SEO doesn’t cost that much. Although it may require a valuable amount of time and effort to build up
+          the reputation online, this is all worth it. Once you manage to put your product page on top of the SERPs,
+          getting the other pages on it is easier.
+        </p>
+        <p class="description">With Concinnity Limited, we are committed in keeping your product listings at higher
+          ranks and always visible
+          to searches. Our eCommerce SEO experts are highly skilled in managing your campaigns to ensure it’s always in
+          good position. What’s even more is you can achieve all of these through organic technique, so you’ll enjoy
+          greater savings on your campaign.</p>
+      </div>
+    </div>
 
     <!-- Brand Visibility Section -->
-    <section class="mt-6 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-center py-5">
-              <h2 class="text-orange mb-3">Boosting Brand Visibility</h2>
-              <p class="hard-gray mx-auto" style="max-width: 650px">
-                Concinnity increases online visibility for eCommerce websites using
-                tailored strategies focused on target audiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="brand-visibility">
+      <h2 class="brand-visibility-title ">
+        Boosting<br>
+        Brand Visibility
+      </h2>
+
+      <p class="brand-visibility-text">
+        Concinniity offers solutions designed to increase the online visibility of
+        eCommerce websites. We implement a tailor-fitted approach with great
+        focus on your target market to ensure your brand reaches the right people.
+      </p>
     </section>
 
     <!-- Feature Cards Section -->
-    <section class="mt-6">
+    <section class="section-spacing">
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-6">
-            <div class="service-card h-100">
-              <div class="p-4 p-lg-5">
-                <h3 class="fw-medium mb-4">
-                  <span class="text-dark">Provides </span>
+            <div class="card border-light card-shadow feature-card h-100">
+              <div class="card-body p-4 p-lg-5">
+                <h3 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+                  <span class="text-gray">Provides </span>
                   <span class="text-orange">Hyper Targeted </span>
-                  <span class="text-dark">Approach</span>
+                  <span class="text-gray">Approach</span>
                 </h3>
-                <p class="hard-gray mb-0">
-                  We utilize user behavior insights to develop strategies that
-                  drive conversions and sales for your online store.
+                <p class="text-gray fs-6 mb-0 line-height-22">
+                  At Concinnity Limited, we have a deep knowledge and
+                  understanding on user behavior. We utilize the things we know
+                  to develop an effective strategy to reach through your target
+                  audience. We do more than just drive traffic to your page. We
+                  make sure that from these visits there's a significant amount
+                  of conversions or sales. To do that, we keep track of customer
+                  experience to ensure they're getting the best service until
+                  they check out and pay for their purchase. Through the process
+                  we're using, you can expect better sales performance.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6">
-            <div class="service-card h-100">
-              <div class="p-4 p-lg-5">
-                <h3 class="fw-medium mb-4">
+            <div class="card border-light card-shadow feature-card h-100">
+              <div class="card-body p-4 p-lg-5">
+                <h3 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
                   <span class="text-orange">Maximizes</span>
-                  <span class="text-dark"> Existing Resources</span>
+                  <span class="text-gray"> Existing Resources</span>
                 </h3>
-                <p class="hard-gray mb-0">
-                  eCommerce SEO optimizes existing investments. Strategists
-                  evaluate campaigns to make them work better without redoing
-                  everything.
+                <p class="text-gray fs-6 mb-0 line-height-22">
+                  Through eCommerce SEO, you can make the most out of your
+                  investments. You don't need to pay repeatedly for tools or new
+                  strategies. With this step, you simply make do of what you
+                  already have. Our eCommerce SEO strategists would help
+                  evaluate and improve your existing campaigns to make it work
+                  for you. What we do is to focus on developing a better
+                  practice to have your online shop appear on SERPs. Instead of
+                  redoing your whole campaign, we focus on repurposing your
+                  content.
                 </p>
               </div>
             </div>
@@ -213,33 +592,30 @@
     </section>
 
     <!-- The Concinnity Way Section -->
-    <section class="mt-6 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-center py-5">
-              <h2 class="text-orange mb-4">The Concinnity Way</h2>
+    <section class="concinnity">
+      <div class="concinnity__inner">
+        <h2 class="concinnity__title">The Concinnity way</h2>
 
-              <p class="text-dark mb-4">
-                We focus on quality visitors who are most likely to convert, ensuring
-                increased sales and conversions for your online store.
-              </p>
-              <p class="fw-medium hard-gray mb-4">
-                Learn more about our eCommerce SEO services.
-              </p>
+        <p class="concinnity__lead">
+          We start by understanding user behavior and analyzing your target audience.
+          We don’t just strive to drive traffic to your page, but we make sure we bring in
+          quality visitors. By quality visitors, we mean qualified ones who are most likely
+          to become a lead and a paying customer eventually. After all, we want you to beef
+          up your conversions and sales.
+        </p>
 
-              <button class="btn-large fw-medium">
-                Let's Talk
-              </button>
-            </div>
-          </div>
-        </div>
+        <p class="concinnity__sub">
+          Learn more about our eCommerce SEO services.
+        </p>
+
+        <a class="concinnity__cta" href="#contact" aria-label="Let's Talk">Let's Talk</a>
       </div>
     </section>
 
+
+
     <div id="footer"></div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"></script>
@@ -248,6 +624,8 @@
       includeHTML("header", "header.html");
       includeHTML("footer", "footer.html");
     </script>
+
+
   </body>
 
 </html>
