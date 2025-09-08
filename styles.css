@@ -361,6 +361,7 @@ footer a {
 }
 
 /* Process Section Styling */
+/* Process Section Styling */
 .process-step {
   text-align: center;
   position: relative;
@@ -383,6 +384,25 @@ footer a {
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+/* Arrow Styling */
+.process-arrow {
+  position: absolute;
+  top: 35%;
+  right: -65px;
+  transform: translateY(-70%);
+  width: 130px;
+  height: auto;
+  z-index: 1;
+}
+
+/* Hide arrows on mobile for cleaner layout */
+@media (max-width: 991px) {
+  .process-arrow {
+    display: none;
+  }
+}
+
 
 .success-metrics-section {
   position: relative;
