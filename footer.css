@@ -1,0 +1,104 @@
+/* =========================
+   FOOTER (self-contained)
+   ========================= */
+
+:root {
+  --main-orange: #ff7e00;
+  --soft-gray: #f0f2f1;
+}
+
+/* Cap footer width exactly like the navbar (980px) */
+footer .container,
+footer .container-sm,
+footer .container-md,
+footer .container-lg,
+footer .container-xl,
+footer .container-xxl,
+footer .container-fluid {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Base spacing */
+footer {
+  padding-top: 56px;
+  /* similar to previous */
+  padding-bottom: 40px;
+  background: #fff;
+}
+
+/* Typography & link styles (local to footer) */
+footer a {
+  text-decoration: none;
+}
+
+footer p,
+footer a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #595959;
+}
+
+/* Support both spellings used in markup */
+footer .hard-gray,
+footer .hard-grey {
+  color: #595959;
+}
+
+/* Section headers */
+footer .link-header {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #171717;
+}
+
+/* Divider look from style.css */
+footer hr {
+  border-color: var(--soft-gray);
+  opacity: 1;
+  margin: 1.25rem 0;
+}
+
+/* Social icons */
+footer .socials a {
+  font-size: 20px;
+  color: #595959;
+}
+
+footer .socials a:hover {
+  color: var(--main-orange);
+}
+
+/* Space columns a bit on tablet/phone */
+@media (max-width: 991.98px) {
+
+  footer .col-lg-5,
+  footer .col-lg-2 {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Mobile behavior — keep LEFT aligned like your first screenshot */
+@media (max-width: 767.98px) {
+
+  /* Do NOT center anything globally */
+  footer .text-md-end {
+    /* Bootstrap makes this end-align at ≥md */
+    text-align: left !important;
+    /* On mobile, force left */
+    padding-top: 20px;
+  }
+
+  /* Keep social icons left, only add spacing */
+  footer .socials.d-flex {
+    justify-content: flex-start !important;
+    gap: 1.5rem !important;
+
+  }
+}

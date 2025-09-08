@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concinnity Limited - Ecommerce SEO Services</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+      /* ===== Variables ===== */
+      :root {
+        --orange-primary: #ff7e00;
+        --orange-hover: #e66d00;
+        --text-gray: #595959;
+        --text-dark: #171717;
+        --border-light: #f0f2f1;
+
+
+      }
+
+      /* ===== Base ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fff;
+        overflow-x: hidden;
+        color: var(--text-dark);
+      }
+
+      img,
+      video,
+      svg,
+      canvas {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .font-manrope {
+        font-family: "Manrope", sans-serif;
+      }
+
+      .text-orange {
+        color: var(--orange-primary);
+      }
+
+      .bg-orange {
+        background-color: var(--orange-primary);
+      }
+
+      .text-gray {
+        color: var(--text-gray);
+      }
+
+      .text-dark {
+        color: var(--text-dark);
+      }
+
+      .border-light {
+        border-color: var(--border-light) !important;
+      }
+
+      /* Buttons */
+      .btn-orange {
+        background-color: var(--orange-primary);
+        border-color: var(--orange-primary);
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .btn-orange:hover {
+        background-color: var(--orange-hover);
+        border-color: var(--orange-hover);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Cards */
+      .card-shadow {
+        box-shadow: 0px 4px 20px rgba(210, 210, 210, 0.15);
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+
+      .card-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 30px rgba(210, 210, 210, 0.25);
+      }
+
+      .card-shadow-light {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .bg-dark-custom {
+        background-color: #171717;
+      }
+
+      .line-height-22 {
+        line-height: 1.4;
+      }
+
+      /* ===== Hero ===== */
+      .hero-section {
+        background: linear-gradient(135deg, rgba(255, 126, 0, 0.05) 0%, rgba(255, 126, 0, 0.1) 100%);
+        min-height: 50vh;
+      }
+
+      /* was fixed width -> make responsive with cap */
+      .hero-text {
+        max-width: 690px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      /* center & cap the container-fluid inside hero on ultrawide */
+      @media (min-width: 1444px) {
+        .hero-section .container-fluid {
+          max-width: var(--page-max);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      /* Breadcrumbs */
+      .crumbs {
+        font-size: .95rem;
+        margin: .35rem 0 1rem;
+        text-align: center;
+      }
+
+      .crumbs a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .crumbs .sep {
+        margin: 0 .25rem;
+      }
+
+      /* ===== Stats / Headings ===== */
+      .stats-number {
+        font-size: 4rem;
+        line-height: 1;
+      }
+
+      /* ===== Section shells (were fixed 984px) ===== */
+      .section-spacing,
+      .benfit-section,
+      .brand-visibility {
+        max-width: 984px;
+        width: 100%;
+        margin: 80px auto;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      /* Benefit section specifics */
+      .benfit-section {
+        border-radius: 2px;
+      }
+
+      .benfit-section .col-lg-8 {
+        padding: 50px 80px 50px 81px;
+      }
+
+      /* Mobile override */
+      @media (max-width: 768px) {
+        .benfit-section .col-lg-8 {
+          padding: 24px 16px;
+          /* much smaller horizontal padding */
+        }
+      }
+
+      /* Feature cards */
+      .feature-card {
+        height: 100%;
+        min-height: 350px;
+      }
+
+      /* ===== Second Statistics ===== */
+      .stat-section {
+        font-family: Arial, sans-serif;
+        max-width: 984px;
+        width: 100%;
+        margin: 80px auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        line-height: 1.6;
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .stat-image img {
+        width: 400px;
+        height: auto;
+        border-radius: 10px;
+        /* Rounded corners like in Figma */
+      }
+
+      .stat-content {
+        flex: 1;
+      }
+
+      .subheading {
+        color: #ff6600;
+        margin-bottom: 10px;
+      }
+
+      .highlight {
+        color: #ff6600;
+        font-size: 65px;
+        font-weight: bold;
+      }
+
+      .head-text {
+        display: flex;
+      }
+
+      .stat-text {
+        margin-left: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        width: 419px;
+      }
+
+      .description {
+        margin-top: 10px;
+        color: #595959;
+        font-size: 15px;
+      }
+
+      /* ===== Brand Visibility ===== */
+      .brand-visibility {
+        display: flex;
+        justify-content: space-between;
+        /* remove duplicate center rule */
+        gap: 24px;
+        margin-top: 150px;
+      }
+
+      .brand-visibility-text {
+        max-width: 649px;
+        width: 100%;
+      }
+
+      .brand-visibility-title {
+        color: #FF7E00;
+      }
+
+      .Concinnity-text {
+        max-width: 815px;
+        width: 100%;
+      }
+
+      /* ===== Concinnity Section ===== */
+      .concinnity {
+        padding: 72px 16px 96px;
+        background:
+          radial-gradient(1200px 400px at 50% 100%, rgba(255, 126, 0, 0.08), transparent 60%),
+          linear-gradient(to bottom, #fff 0%, #fff 55%, #fff7f0 85%, #fff 100%);
+      }
+
+      .concinnity__inner {
+        max-width: 820px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .concinnity__title {
+        color: var(--orange-primary);
+        font-weight: 800;
+        font-size: clamp(24px, 3.4vw, 32px);
+        margin: 0 0 16px;
+        letter-spacing: .2px;
+      }
+
+      .concinnity__lead {
+        color: var(--text-gray);
+        line-height: 1.75;
+        font-size: 16px;
+        margin: 0 auto 20px;
+      }
+
+      .concinnity__sub {
+        color: var(--text-dark);
+        font-weight: 600;
+        margin: 0 0 28px;
+        font-size: 18px;
+      }
+
+      .concinnity__cta {
+        display: inline-block;
+        background: var(--orange-primary);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 12px 40px;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(255, 126, 0, .25);
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+
+      .concinnity__cta:hover {
+        background: var(--orange-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(255, 126, 0, .28);
+      }
+
+      .concinnity__cta:active {
+        transform: translateY(0);
+        opacity: .95;
+      }
+
+      /* ===== Extra Stats Section (cards) ===== */
+      .stats-section {
+        padding: 56px 0;
+        background: radial-gradient(1200px 600px at 50% -220px, #fff3e6 0%, #ffffff 55%);
+      }
+
+      .stats-container {
+        width: min(1120px, 92vw);
+        margin-inline: auto;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+
+      @media (max-width: 900px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .stat-card {
+        background: #fff;
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, .06);
+        padding: 28px;
+        text-align: center;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--orange-primary);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+      }
+
+      .stat-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+
+      .stat-value {
+        margin: 6px 0 4px;
+        font-weight: 800;
+        font-size: clamp(2rem, 3vw + .5rem, 3rem);
+        color: var(--text-dark);
+        line-height: 1;
+      }
+
+      .stat-caption {
+        margin: 0;
+        color: var(--text-gray);
+        font-size: 1rem;
+      }
+
+      /* ===== CAP LAYOUT AT 1444px ===== */
+      /* Bootstrap containers stop growing past 1444px */
+      @media (min-width: 1400px) {
+
+        .container,
+        .container-lg,
+        .container-xl,
+        .container-xxl {
+          max-width: var(--page-max);
+        }
+      }
+
+      /* ===== Responsive ===== */
+      @media (max-width: 992px) {
+        .brand-visibility {
+          flex-direction: column;
+          margin-top: 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .stats-number {
+          font-size: 3rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem !important;
+        }
+
+        .section-spacing,
+        .benfit-section,
+        .stat-section,
+        .brand-visibility {
+          margin: 56px auto;
+        }
+
+        .benfit-section {
+          padding: 40px 16px;
+        }
+
+        .feature-card {
+          min-height: auto;
+          margin-bottom: 2rem;
+        }
+
+        .stat-section {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .stat-text {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .stats-number {
+          font-size: 2.5rem;
+        }
+
+        .hero-title {
+          font-size: 2rem !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="header"></div>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xl-10">
+            <!-- Hero Content -->
+            <div class="hero-text text-center py-5">
+              <h1 class="font-manrope fw-bold hero-title mb-4" style="font-size: 3.5rem">
+                <p class="text-dark">Local </p>
+                <p class="text-orange">SEO EXPERTS</p>
+              </h1>
+
+              <div class="crumbs">
+                <a href="#">Home</a><span class="sep">›</span>
+                <a href="#">Solutions</a><span class="sep">›</span>
+                <a href="#">Marketing</a><span class="sep">›</span>
+                <a href="#">SEO</a><span class="sep">›</span>
+                <span class="text-orange">Local SEO EXPERTS</span>
+              </div>
+              <p class=" text-dark mb-3 mx-auto" style="max-width: 650px">
+                Optimize your brand for local search. Concinnity Limited provides you with local SEO services that will
+                improve your rank and visibility on SERPs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section class="benfit-section bg-dark-custom">
+      <div class="">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+              <span class="text-orange">Optimized </span>
+              <span class="" style="color: #595959;">for local search</span>
+            </h2>
+
+            <p class="text-light fs-6 mb-0 line-height-22">
+              Boost your rank and visibility on SERPs with Concinnity’s local SEO services. Our local search engine
+              optimization solutions are designed to suit the unique needs of locally operating businesses. We have
+              worked with a number of companies and have helped them increase sales and revenue with the help of local
+              SEO. <br>
+              <br>
+              We run highly effective local SEO campaigns through a combination of different strategies.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="text-center">
+              <img src="images/LocalSeo/visibility.svg" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Statistics Section -->
+    <section class="section-spacing">
+      <div class="">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <p class="text-orange fs-5 mb-3">Local Search Engine Optimization Services</p>
+
+            <div class="d-flex align-items-start mb-4">
+              <span class="font-manrope fw-bold text-orange stats-number me-4">97%</span>
+              <div>
+                <h3 class="font-manrope fw-bold text-dark h4 mb-0">
+                  of consumers get their first impression of a practice from search engines
+                </h3>
+              </div>
+            </div>
+
+            <div class="text-gray fs-6 line-height-22">
+              Need help in improving the location-based searches of your business? Concinnity Limited is just the
+              company you’re looking for. We have been known in the industry as one of the most trusted providers
+              of search engine optimisation services in Hong Kong. Our team is focused on creating effective strategies
+              to help our clients run successful local SEO campaigns.
+            </div>
+
+            <button class="btn btn-orange rounded-3 px-5 py-3 fw-medium fs-5 mt-4">
+              Let's Talk
+            </button>
+          </div>
+
+          <div class="col-lg-6 text-lg-end">
+            <img src="/images/LocalSeo/statsImg.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Visibility Section -->
+    <section class="brand-visibility">
+      <h2 class="brand-visibility-title ">
+        Wrebsite
+        <br>
+        Optimization
+      </h2>
+
+      <p class="brand-visibility-text">
+        Concinnity makes sure your website is optimized with quality content that uses the right geographically relevant
+        keywords. This sends the right local signals to the search engines.
+      </p>
+    </section>
+
+
+
+    <!-- Second Statistics Section -->
+    <div class="stat-section">
+      <!-- Image Section -->
+      <div class="stat-image">
+        <img src="/images/LocalSeo/secondStat.svg" alt="People looking at laptop">
+      </div>
+
+      <!-- Text Section -->
+      <div class="stat-content">
+        <p class="subheading">More Visibility on Mobile Search Result Page</p>
+        <p class="head-text">
+          <span class="highlight">46%</span>
+          <span class="stat-text">of all searches on Google
+            <br>
+            are local</span>
+        </p>
+        <p class="description">
+          The number of mobile users have increased immensely over the last few years. Majority of them are using their
+          smartphones to search for the things and places they need. With that, it’s important to ensure you have a
+          solid local SEO strategy to target these people. Otherwise, you’ll have lesser chance of getting seen by
+          anyone. Here at Concinnity, we know just how much it matters.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Brand Visibility Section two -->
+    <section class="brand-visibility">
+      <h2 class="brand-visibility-title ">
+        Improved
+        <br>
+        Online presence
+      </h2>
+
+      <p class="brand-visibility-text">
+        We make sure to get you to appear on Google Map results, local directories, and social media. With improved
+        online presence, you are likely to get more visitors to your website., which you can turn to leads and
+        eventually paying customers.
+      </p>
+    </section>
+
+
+
+
+    <!-- Feature Cards Section -->
+    <section class="section-spacing">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card border-light card-shadow feature-card h-100">
+              <div class="card-body p-4 p-lg-5">
+                <h3 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+                  <span class="text-orange">Boost </span>
+                  <span class="text-gray">your Site's Ranking in </span>
+                  <span class="text-orange">Google's Local Pack</span>
+                </h3>
+                <p class="text-gray fs-6 mb-0 line-height-22">
+                  When it comes to search engine results, it’s always good to aim for the top ranks. This is true
+                  especially if you’re targeting a specific locality. Appearing into Google’s top 3 local pack can boost
+                  up your visibility online. With us, we help businesses get into the top of the search, be it in local
+                  pack or SERPs. Our SEO specialists would provide insights to assist you in reaching better position on
+                  these results.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card border-light card-shadow feature-card h-100">
+              <div class="card-body p-4 p-lg-5">
+                <h3 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+                  <span class="text-gray">Offers</span>
+                  <span class="text-orange"> Better Conversion</span>
+                  <span class="text-gray"> Rate on</span>
+                  <span class="text-orange"> All Channels</span>
+                </h3>
+                <p class="text-gray fs-6 mb-0 line-height-22">
+                  Whether it’s paid, organic or social, investing in a local SEO can do wonders to your site’s
+                  performance. A well-optimised website ensures better conversion rate. Through our services, we turn
+                  these visitors into profit-generating leads. We arrange flexible strategies to match up with your
+                  goods and ensure good returns. At Concinnity Limited, our focus is to build and develop a better
+                  business flow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section class="benfit-section bg-dark-custom">
+      <div class="container">
+        <div class="row align-items-center">
+
+
+          <div class="col-12 col-lg-4 order-2 order-lg-1">
+            <div class="text-center text-lg-start" style="padding-left: 50px;">
+              <img class="img-fluid" src="/images/LocalSeo/visibility.svg" alt="Star icon">
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="col-12 col-lg-8 order-1 order-lg-2">
+            <h2 class="font-manrope fw-bold mb-4" style="font-size: 2rem">
+              <span class="text-orange">Mobile </span>
+              <span style="color:#595959;">search visibility</span>
+            </h2>
+
+            <p class="text-light fs-6 mb-0 line-height-22">
+              With the significant increase of mobile search over the last few years, it is a big mistake to forget
+              about the mobile users. Concinnity makes sure your online presence is optimized enough for your brand to
+              be included on mobile search results.
+
+              <br><br>
+              Be it paid, organic or social, local SEO can make a huge difference on your business’s online performance.
+              With a properly optimized website comes higher conversion rate for you.
+            </p>
+
+            <p class="text-gray" style="padding-top: 10px;">Learn more about our local SEO services.</p>
+
+            <a class="concinnity__cta" style="margin-top:20px;" href="#contact" aria-label="Let's Talk">Contact us
+              Today</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ---percentage card------ -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stats-grid">
+
+          <!-- Card 1 -->
+          <article class="stat-card">
+            <img class="stat-icon" src="/images/LocalSeo/searchIcon.svg" alt="Search">
+            <div class="stat-value">95%</div>
+            <p class="stat-caption">Perform Local Searches</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="stat-card">
+            <img class="stat-icon" src="/images/LocalSeo/callIcon.svg" alt="Call">
+            <div class="stat-value">61%</div>
+            <p class="stat-caption">Call the business</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="stat-card">
+            <img class="stat-icon" src="/images/LocalSeo/person.svg" alt="Visit">
+            <div class="stat-value">59%</div>
+            <p class="stat-caption">Visit the business</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- third Statistics Section -->
+    <div class="stat-section">
+      <!-- Image Section -->
+      <div class="stat-image">
+        <img src="/images/LocalSeo/thirdStat.svg" alt="People looking at laptop">
+      </div>
+
+      <!-- Text Section -->
+      <div class="stat-content">
+        <p class="subheading">Makes You Stand Out among Your Competitors</p>
+        <p class="head-text">
+          <span class="highlight">85%</span>
+          <span class="stat-text">of shoppers search for 
+            <br>
+            local business online</span>
+        </p>
+        <p class="description">
+          With local SEO, it’ll be easier to capture the attention of your target audience. With our help, you’re rest
+          assured that we can create a better leverage on link building. Thus, giving you opportunity to get ahead and
+          be seen. Without properly targeting local platforms, it might be difficult to build up your brand. This would
+          be less of your worries when you choose to work with us. As we have an expert team who can cover all the
+          possible facets of digital marketing.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+    <!--fourth Statistics Section -->
+    <section class="section-spacing">
+      <div class="">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="d-flex align-items-start mb-4">
+              <span class="font-manrope fw-bold text-orange stats-number me-4">73%</span>
+              <div>
+                <h3 class="font-manrope fw-bold text-dark h4 mb-0">
+                  of all online
+                  <br>
+                  activity is local
+                </h3>
+              </div>
+            </div>
+
+            <div class="text-gray fs-6 line-height-22">
+              From local directories, Google Maps, social media down to searches, we are sure to get you there. If
+              you’re looking for a local SEO provider in Hong Kong, you don’t need to search further. We at Concinnity
+              Limited is dedicated in providing you with solid and effective solutions for the success of your business.
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 text-lg-end">
+            <img src="/images/LocalSeo/fourthstat.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- The Concinnity Way Section -->
+    <section class="concinnity">
+      <div class="concinnity__inner">
+        <h2 class="concinnity__title">How Concinnity can support your SEO Strategy</h2>
+
+        <p class="concinnity__lead" style="color: #171717;">
+          At Concinnity Limited, we provide our clients with the necessary assistance in choosing the right keywords to
+          rank for in the search engine results. But as a premier provider of local SEO service in Hong Kong, our
+          service does not stop in keyword research. We look into the tiniest detail of your website to see how
+          information is arranged and presented. We analyze each section and check each aspect for any rooms for
+          improvement. We make the necessary changes so that content is properly displayed for both the human users and
+          the Google bots.
+          <br>
+          <br>
+          We also look into the quality of your website content. If you want to up your SEO game, you have to have
+          relevant, informative, and unique content that is updated on a regular basis. Content update plays a vital
+          role in not just the overall function of your website, but also on the overall effectiveness of our SEO
+          strategy. Creating quality blog entries on a regular basis that focus on particular target keywords, for
+          instance, is a great move to have your site displayed on the first page of search engine results.
+        </p>
+      </div>
+    </section>
+
+
+
+    <div id="footer"></div>
+    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS (bundle includes Popper). Keep only this one -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+
+    <!-- Your scripts -->
+    <script src="script.js"></script>
+    <script>
+      // inject header/footer after Bootstrap is loaded
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+    </script>
+
+
+  </body>
+
+</html>

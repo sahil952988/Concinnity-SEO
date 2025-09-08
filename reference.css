@@ -1,0 +1,78 @@
+/* -------------------
+   Headings
+------------------- */
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 55px;
+  font-weight: 700; /* Bold */
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 45px;
+  font-weight: 700; /* Bold */
+}
+
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 32px;
+  font-weight: 700; /* Bold */
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 500; /* Medium */
+}
+
+/* Variant for semibold h4 */
+.h4-semibold {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600; /* Semibold */
+}
+
+/* -------------------
+   Small Texts
+------------------- */
+
+.small-heading {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 700; /* Bold */
+}
+
+.subheading {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500; /* Medium */
+}
+
+.menu-heading {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600; /* Semibold */
+}
+
+/* -------------------
+   Paragraphs
+------------------- */
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+}
+
+/* Variant for smaller paragraphs */
+p.small {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400; /* Regular */
+}
+
+:root {
+  --gradient-light: linear-gradient(180deg, #e6eeec 0%, #ffffff 100%);
+  --gradient-teal: linear-gradient(180deg, #5cd6ba 0%, #dff1ba 100%);
+}

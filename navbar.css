@@ -1,0 +1,194 @@
+/* =========================
+   NAVBAR (self-contained)
+   ========================= */
+
+:root {
+  --main-orange: #ff7e00;
+}
+
+/* Reset link underline */
+header a {
+  text-decoration: none;
+}
+
+/* Header spacing */
+header {
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+/* Container cap */
+header .container,
+header .container-lg,
+header .container-md,
+header .container-sm,
+header .container-xl,
+header .container-xxl,
+header .container-fluid {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Navbar base */
+header .navbar {
+  padding: 0;
+}
+
+header .navbar-nav {
+  gap: 30px;
+}
+
+header .navbar-nav .nav-item {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0;
+}
+
+
+header .navbar {
+  background-color: #fff;
+  padding-top: 31px;
+  padding-bottom: 10px;
+  z-index: 1030;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Extra padding on left/right for small devices */
+@media (max-width: 767.98px) {
+  header .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+
+header .nav-link {
+  color: #171717;
+  transition: color 0.2s ease;
+}
+
+header .nav-link:hover,
+header .nav-link:focus {
+  color: var(--main-orange);
+}
+
+header .nav-link.active {
+  color: var(--main-orange);
+}
+
+/* Tools button */
+header .btn-secondary {
+  border-radius: 30px;
+  padding: 8px 35px;
+  border: 1px solid var(--main-orange);
+  color: #000;
+  background-color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+header .btn-secondary:hover {
+  background-color: var(--main-orange);
+  color: #fff;
+  border-color: var(--main-orange);
+}
+
+/* Hamburger toggler */
+header .navbar-toggler {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.25rem 0.5rem;
+  margin-left: auto;
+}
+
+header .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Desktop collapse behavior */
+@media (min-width: 768px) {
+  header .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: center;
+
+  }
+
+  header .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Mobile collapse behavior */
+@media (max-width: 767.98px) {
+  header .navbar-expand-md .navbar-collapse {
+    display: none;
+  }
+
+  header .navbar-expand-md .navbar-collapse.show {
+    display: block;
+  }
+
+  /* Hide Tools button on mobile */
+  header .btn-secondary {
+    display: none !important;
+  }
+}
+
+/* =========================
+   DROPDOWN MENUS
+   ========================= */
+header .dropdown-menu {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem;
+  display: none;
+  /* default hidden */
+}
+
+/* Show dropdown on hover (desktop) */
+@media (min-width: 768px) {
+
+  header .dropdown:hover>.dropdown-menu,
+  header .dropend:hover>.dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* prevents jump */
+  }
+}
+
+header .dropdown-item {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+
+header .dropdown-item:hover,
+header .dropdown-item:focus {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--main-orange);
+}
+
+header .dropdown-item.active,
+header .dropdown-item:active {
+  background-color: rgba(255, 126, 0, 0.12);
+  color: #171717;
+}
+
+/* Nested dropdown (open to the right) */
+header .dropend .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .25rem;
+}

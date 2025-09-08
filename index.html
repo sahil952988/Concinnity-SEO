@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConcinnitY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <section class="hero-section">
+      <div class="hero d-flex justify-content-center align-items-center">
+        <div class="hero-info d-flex flex-column text-center gap-4">
+          <h1>
+            Is Your Website <br />
+            <span class="text-orange">Holding</span> You Back?
+          </h1>
+          <p>
+            Discover what’s slowing you down with our free AI-powered audit.<br />
+            SEO, performance, carbon load, and more — in under 60 seconds.
+          </p>
+          <button class="btn-large fw-medium">Run My Free Audit</button>
+          <p class="text-orange fs-6">No sign-up. No jargon. Just insights.</p>
+        </div>
+      </div>
+      <div class="hero-stat-image-temp mt-5">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="images/hero_stats.png" alt="Audit Dashboard" class="img-fluid" />
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section mt-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mt-5">
+            <div class="position-relative">
+              <img src="images/unsplash_7uoMmzPd2JA.png" alt="Team collaboration" class="img-fluid rounded w-100" />
+
+              <!-- Overlapping Card -->
+              <div
+                class="position-absolute start-0 ms-4 bg-white shadow rounded-3 px-0 py-3 d-flex flex-column justify-content-center align-items-center"
+                style="
+                  width: clamp(110px, 18vw, 150px);
+                  height: 160px;
+                  bottom: -35px;
+                ">
+                <!-- Bigger Icon/Image -->
+                <img src="images/card1.png" alt="Progress Icon" class="img-fluid mb-3"
+                  style="width: 75px; height: 75px" />
+
+                <!-- Main Stat -->
+                <h5 class="fw-bold mb-2">17k+</h5>
+
+                <!-- Smaller Paragraph Text -->
+                <p class="text-muted mb-0 text-center" style="font-size: 0.7rem">
+                  1000k+ Contributions <br />
+                  in the last year!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <button class="btn btn-tertiary">What We Do</button>
+            <h2 class="mb-2">
+              Marketing Meets
+              <span class="text-orange fw-bolder">Intelligence.</span>
+              Tech That Performs.
+            </h2>
+            <p class="hard-gray">
+              From growth-driven SEO to AI transformation — we help
+              digital-first businesses scale smarter.
+            </p>
+          </div>
+        </div>
+        <!-- Service Cards -->
+        <div class="row g-4 mt-5">
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing1.png" alt="E-commerce SEO" width="60" height="60" class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">E-commerce & Shopify SEO</h5>
+                  <p class="hard-gray mb-0">
+                    Drive traffic that converts with custom, data-led SEO
+                    strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing2.png" alt="Green SEO" width="60" height="60" class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">Green SEO</h5>
+                  <p class="hard-gray mb-0">
+                    Reduce your website's carbon footprint while ranking higher
+                    on Google.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing3.png" alt="Technical SEO" width="60" height="60" class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">Technical SEO Audits</h5>
+                  <p class="hard-gray mb-0">
+                    Dig deep into performance, crawlability, and code-level
+                    fixes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing4.png" alt="AI Transformation" width="60" height="60"
+                  class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">AI Transformation</h5>
+                  <p class="hard-gray mb-0">
+                    Automate workflows, chatbots, and data intelligence to
+                    unlock scale.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing5.png" alt="Big Data & AI" width="60" height="60" class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">Big Data & AI Implementation</h5>
+                  <p class="hard-gray mb-0">
+                    Custom solutions to leverage data, from insights to action.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-card p-4 h-100">
+              <div class="d-flex align-items-center">
+                <img src="images/marketing/marketing6.png" alt="Digital Strategy" width="60" height="60" class="me-3" />
+                <div>
+                  <h5 class="fw-medium mb-2">Digital Strategy</h5>
+                  <p class="hard-gray mb-0">
+                    End-to-end roadmap tailored for your growth stage and tech
+                    stack.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose-us mt-6" style="margin-bottom: 200px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-center mb-5">
+              <span class="btn btn-tertiary mb-2"> Why Concinnity </span>
+              <h2>Sustainable, Scalable, Strategic.</h2>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center h-100 border border-gray-300 rounded-3 p-4">
+                  <img src="/images/choose-us/choose1.png" alt="Sustainable" width="auto" height="40" class="mb-3" />
+                  <h5 class="fw-medium mb-3">Sustainably Smart</h5>
+                  <p class="hard-gray">
+                    We believe in digital that performs — and respects the
+                    planet.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center h-100 border border-orange rounded-3 p-4">
+                  <img src="/images/choose-us/choose2.png" alt="Scalable" width="auto" height="40" class="mb-3" />
+                  <h5 class="fw-medium mb-3">Built to Scale</h5>
+                  <p class="hard-gray">
+                    From startups to enterprises, our solutions grow with you.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center h-100 border border-gray-300 rounded-3 p-4">
+                  <img src="/images/choose-us/choose3.png" alt="Strategic" width="auto" height="40" class="mb-3" />
+                  <h5 class="fw-medium mb-3">Strategically Driven</h5>
+                  <p class="hard-gray">
+                    Data-led strategies tailored to your unique goals and needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Metrics Section -->
+    <section class="success-metrics-section mt-6 bg-orange ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-center py-5 text-white rounded-3">
+              <h2 class="mb-5">Success You Can Measure</h2>
+
+              <div class="row g-4 text-center">
+                <!-- First Stat -->
+                <div class="col-lg-4">
+                  <div class="mb-4">
+                    <h2 class="fw-bold mb-3" style="font-size: 3rem" id="stat-1">
+                      +0%
+                    </h2>
+                    <div class="fw-bold mb-1 text-dark">Organic Sales</div>
+                    <div class="fw-bold mb-3 text-dark">in 90 Days</div>
+                    <p class="mb-0" style="opacity: 0.8">
+                      Shopify SEO + Green <br />Optimization for [Client Name]
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Second Stat -->
+                <div class="col-lg-4">
+                  <div class="mb-4">
+                    <h2 class="fw-bold mb-3" style="font-size: 3rem" id="stat-2">
+                      0+
+                    </h2>
+                    <div class="fw-bold mb-1 text-dark">Hours saved with</div>
+                    <div class="fw-bold mb-3 text-dark">AI Chatbot</div>
+                    <p class="mb-0" style="opacity: 0.8">
+                      AI implementation for <br />[SaaS Startup]
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Third Stat -->
+                <div class="col-lg-4">
+                  <div class="mb-4">
+                    <h2 class="fw-bold mb-3" style="font-size: 3rem" id="stat-3">
+                      0%
+                    </h2>
+                    <div class="fw-bold mb-1 text-dark">
+                      Reduction in Website
+                    </div>
+                    <div class="fw-bold mb-3 text-dark">Carbon Load</div>
+                    <p class="mb-0" style="opacity: 0.8">
+                      Green SEO and performance <br />revamp for [NGO / B2B
+                      Firm]
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section mt-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="text-center mb-5">
+              <h2>Let's Get You Growing</h2>
+            </div>
+
+            <div class="row g-0">
+              <div class="col-lg-3 col-md-6">
+                <div class="process-step h-100 px-0">
+                  <div class="process-number text-start">1</div>
+                  <div>
+                    <img src="/images/process/process1.png" alt="Audit" width="95" height="95"
+                      class="mb-3 d-inline-block" />
+                  </div>
+
+                  <h5 class="fw-medium mb-3">Run Free <br />Audit</h5>
+                  <p class="hard-gray">
+                    Instant SEO, performance <br />& sustainability insights.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="process-step h-100">
+                  <div class="process-number">2</div>
+                  <img src="/images/process/process2.png" alt="Strategy Call" width="95" height="95"
+                    class="mb-3 d-inline-block" />
+                  <h5 class="fw-medium mb-3">
+                    Schedule a <br />
+                    Strategy Call
+                  </h5>
+                  <p class="hard-gray">1:1 session with a senior strategist.</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="process-step h-100">
+                  <div class="process-number">3</div>
+                  <div class="mx-auto">
+                    <img src="/images/process/process3.png" alt="Build & Implement" width="95" height="95"
+                      class="mb-3 d-inline-block" />
+                  </div>
+
+                  <h5 class="fw-medium mb-3">Build & <br />Implement</h5>
+                  <p class="hard-gray">Custom roadmap with full execution.</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="process-step h-100">
+                  <div class="process-number">4</div>
+                  <img src="/images/process4.svg" alt="Track & Scale" width="95" height="95"
+                    class="mb-3 d-inline-block" />
+                  <h5 class="fw-medium mb-3">Track, Improve, <br />Scale</h5>
+                  <p class="hard-gray">
+                    Transparent analytics and growth loops.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn-large fw-medium rounded-3">
+                Book My Strategy Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="mt-6 mb-4">
+      <div class="container">
+        <h2 class="text-center mb-5">Trusted By</h2>
+
+        <!-- First Row of Logos -->
+        <div class="row justify-content-center g-4 mb-4">
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_fashionTV.png" alt="Fashion TV" class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_Nissin.png" alt="Nissin" class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_city-of-dreams.png" alt="City of Dreams"
+              class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_DP-world.png" alt="DP World" class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_KPMG.png" alt="KPMG" class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_THP-Group.png" alt="THP Group" class="img-fluid client-logo" />
+          </div>
+        </div>
+
+        <!-- Second Row of Logos -->
+        <div class="row justify-content-center g-4">
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_Pacific-Prime.png" alt="Pacific Prime"
+              class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_Beconcept.png" alt="BoConcept" class="img-fluid client-logo" />
+          </div>
+          <div class="col-6 col-md-2 d-flex align-items-center justify-content-center">
+            <img src="/images/trusted-brands/logo_YesStyle.png" alt="YesStyle" class="img-fluid client-logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section pt-6 pb-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="text-center py-5 px-2 bg-orange text-white rounded-3">
+              <!-- Text block -->
+              <div class="mb-4">
+                <h2 class="mb-2">Get monthly insights on</h2>
+                <p class="mb-0">SEO, AI, and green marketing.</p>
+              </div>
+
+              <!-- Form block -->
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div class="d-flex align-items-center gap-3">
+                    <input type="email" class="form-control form-control-lg placeholder-grayish"
+                      placeholder="you@example.com" aria-label="Email address" />
+                    <button class="btn btn-light btn-lg px-5 rounded-5" type="button">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+    </script>
+  </body>
+
+</html>
